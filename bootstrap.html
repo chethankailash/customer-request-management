@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+
+</head>
+<style type="text/css">
+	.outline{
+		border:1px solid grey;
+	}
+</style>
+<body>
+<div class="container">
+	<table id="table">
+		
+	</table>
+	
+</div>
+<script type="text/javascript">
+	var tableHandle = document.getElementById('table');
+	
+	for(i=1;i<=5;i++){
+		var tr=document.createElement('tr');
+		var td= document.createElement('td');
+		var input=document.createElement('input');
+		input.setAttribute('type','checkbox');
+		input.setAttribute('id',i);
+		input.setAttribute('onclick','check(this.id)');
+		td.appendChild(input);
+		tr.appendChild(td);
+		tableHandle.appendChild(tr);
+	}
+
+
+
+	function check(id){
+		//console.log(id);
+		if(document.getElementById(id).checked){
+			console.log(id,'checked');
+		}else{
+			console.log(id,'unchecked');
+		}
+	}
+</script>
+</body>
+</html>
